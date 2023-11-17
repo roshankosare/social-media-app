@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format:all": "prettier --write .",
+    "lint:staged": "next lint git diff --staged --name-only --diff-filter d | xargs",
+    "format": "prettier --write",
+    "format:staged": "prettier --write git diff --staged --name-only --diff-filter d | xargs",
     "postinstall": "husky install"
   },
   "dependencies": {
