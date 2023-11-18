@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export const Icons = {
+export const NavBarIcon = {
   Logo: () => {
     return (
       <Image
@@ -19,7 +19,7 @@ export const Icons = {
         width={200}
         height={200}
         alt="logo"
-        className="h-full w-full dark:invert"
+        className="h-full w-full filter-none dark:invert"
       />
     )
   },

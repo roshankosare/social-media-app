@@ -1,4 +1,4 @@
-import { UtilityIcons } from '@/icons/utitlityIcons'
+import { UtilityIcons } from '@/components/icons/utitlityIcons'
 import { LucideProps } from 'lucide-react'
 
 type NavLink = {
