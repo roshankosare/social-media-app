@@ -28,15 +28,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <SideBar/>
-          {
-            <div className='px-2 sm:px-2'>
-              {
-                children
-              }
-            </div>
-          }
-          <BottomBar/>
+          <SideBar />
+          {<div className="px-2 sm:px-2">{children}</div>}
+          <BottomBar />
         </ThemeProvider>
       </body>
     </html>

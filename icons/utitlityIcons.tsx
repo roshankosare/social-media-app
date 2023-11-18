@@ -8,26 +8,25 @@ import {
   UserCircle2,
 } from 'lucide-react'
 
-
 export const UtilityIcons = {
-  HomeIcon: (props:LucideProps) => {
+  HomeIcon: (props: LucideProps) => {
     return <Home {...props} />
   },
-  SerachIcon: (props:LucideProps) => {
-    return <Search  {...props} />
+  SerachIcon: (props: LucideProps) => {
+    return <Search {...props} />
   },
-  MessageIcon: (props:LucideProps) => {
-    return <MessageSquare  {...props} />
+  MessageIcon: (props: LucideProps) => {
+    return <MessageSquare {...props} />
   },
-  ExploreIcon: (props:LucideProps) => {
-    return <Compass  {...props} />
-  },
-
-  NotificationIcon: (props:LucideProps) => {
-    return <Bell  {...props} />
+  ExploreIcon: (props: LucideProps) => {
+    return <Compass {...props} />
   },
 
-  ProfileIcon: (props:LucideProps) => {
-    return <UserCircle2  {...props} />
+  NotificationIcon: (props: LucideProps) => {
+    return <Bell {...props} />
+  },
+
+  ProfileIcon: (props: LucideProps) => {
+    return <UserCircle2 {...props} />
   },
 }

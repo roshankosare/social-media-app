@@ -1,11 +1,11 @@
-import TopBar from "./TopBar"
+import TopBar from './TopBar'
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({}) => {
   return (
-    <div className="flex flex-row px-2 sm:px-5 py-2 justify-between w-full h-[75px] border-b sm:hidden border-gray-300 dark:border-gray-500">
-      <TopBar/>
+    <div className="flex h-[75px] w-full flex-row justify-between border-b border-gray-300 px-2 py-2 dark:border-gray-500 sm:hidden sm:px-5">
+      <TopBar />
     </div>
   )
 }

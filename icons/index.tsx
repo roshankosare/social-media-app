@@ -8,7 +8,7 @@ export const Icons = {
         width={40}
         height={40}
         alt="logo"
-        className="w-full h-full rounded-full"
+        className="h-full w-full rounded-full"
       />
     )
   },
@@ -19,7 +19,7 @@ export const Icons = {
         width={200}
         height={200}
         alt="logo"
-        className="w-full h-full dark:invert"
+        className="h-full w-full dark:invert"
       />
     )
   },

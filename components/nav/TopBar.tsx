@@ -5,12 +5,12 @@ interface TopBarProps {}
 
 const TopBar: React.FC<TopBarProps> = ({}) => {
   return (
-    <div className="flex flex-row px-2  justify-between w-full h-[60px]">
-      <div className=" flex flex-row gap-x-2 h-full w-full">
-        <div className=" border-[2px] dark:border-white border-black rounded-full w-[40px] h-[40px] my-auto">
+    <div className="flex h-[60px] w-full  flex-row justify-between px-2">
+      <div className=" flex h-full w-full flex-row gap-x-2">
+        <div className=" my-auto h-[40px] w-[40px] rounded-full border-[2px] border-black dark:border-white">
           <Icons.Logo />
         </div>
-        <div className="h-[30px] w-auto    my-auto">
+        <div className="my-auto h-[30px]    w-auto">
           <Icons.NameIcon />
         </div>
       </div>
