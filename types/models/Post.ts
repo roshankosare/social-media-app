@@ -1,6 +1,6 @@
 import { User } from './User';
 
-export type Post = {
+export type PostModel = {
   id: string;
   userId: string;
   user: User;

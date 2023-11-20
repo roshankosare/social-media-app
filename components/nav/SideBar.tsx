@@ -6,7 +6,7 @@ interface SideBarProps {}
 
 const SideBar: React.FC<SideBarProps> = ({}) => {
   return (
-    <div className="hidden h-screen w-80 flex-col gap-y-10 border-r border-gray-300 py-5 dark:border-gray-500  sm:flex">
+    <div className="sticky left-0 hidden h-screen w-80 flex-col gap-y-10 border-r border-gray-300  py-5 dark:border-gray-500 sm:flex">
       <TopBar />
       <div className="flex flex-col gap-y-10 px-5">
         {NavLinks.map((link) => (

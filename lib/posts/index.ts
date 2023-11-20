@@ -1,4 +1,4 @@
-import { Post } from '@/types/models/Post';
+import { PostModel } from '@/types/models/Post';
 import { db } from '../database';
 import { Prisma } from '@prisma/client';
 
@@ -7,7 +7,7 @@ export class PostActions {
     postFindManyArgs,
   }: {
     postFindManyArgs: Prisma.PostFindManyArgs;
-  }): Promise<Post[]> {
+  }): Promise<PostModel[]> {
     const data = await db.post.findMany({
       take: postFindManyArgs.take || 10,
       skip: postFindManyArgs.skip || 0,
@@ -42,15 +42,15 @@ export class PostActions {
         },
       },
     });
-    const posts: Post[] = data.map((data) => {
-      const post: Post = {
+    const posts: PostModel[] = data.map((data) => {
+      const post: PostModel = {
         id: data.id,
         userId: data.userProfileId,
         likeCount: data.likedBy.length,
         commentsCount: data.comments.length,
         imageUrl: data.imageUrl,
         user: {
-          usrname: data.userProfile.username,
+          username: data.userProfile.username,
           email: data.userProfile.email,
           avatar: data.userProfile.avatar,
         },

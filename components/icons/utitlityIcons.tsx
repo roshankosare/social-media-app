@@ -1,6 +1,7 @@
 import {
   Bell,
   Compass,
+  Heart,
   Home,
   LucideProps,
   MessageSquare,
@@ -28,5 +29,9 @@ export const UtilityIcons = {
 
   ProfileIcon: (props: LucideProps) => {
     return <UserCircle2 {...props} />;
+  },
+
+  likeIcon: (props: LucideProps) => {
+    return <Heart {...props} />;
   },
 };

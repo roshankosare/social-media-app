@@ -16,15 +16,17 @@ import useSignUp from '@/hooks/useSignUp';
 interface SignUpProps {}
 
 const SignUp: React.FC<SignUpProps> = ({}) => {
-  const { onSubmit, form } = useSignUp();
+  const { onSubmit, form, signUpError } = useSignUp();
   return (
-    <Card className="mx-auto my-auto flex w-96 flex-col border-none px-8 pb-10 sm:border-solid sm:px-2">
+    <Card className="mx-auto my-auto flex w-full flex-col border-none px-8 pb-10 sm:border-solid sm:px-2">
       <CardHeader>
         <Logo />
       </CardHeader>
       <div className="flex flex-col gap-y-8">
         <Form {...form}>
-          {/* {signInError && <ErrorBox className="my-2">{signInError}</ErrorBox>} */}
+          {signUpError && (
+            <p className="mx-auto py-2 text-sm text-red-500">{signUpError}</p>
+          )}
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="flex flex-col gap-y-8 px-5"
@@ -35,7 +37,7 @@ const SignUp: React.FC<SignUpProps> = ({}) => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="email" {...field} />
+                    <Input type="text" placeholder="email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -48,7 +50,7 @@ const SignUp: React.FC<SignUpProps> = ({}) => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="password" placeholder="password" {...field} />
+                    <Input type="text" placeholder="username" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -67,7 +69,7 @@ const SignUp: React.FC<SignUpProps> = ({}) => {
               )}
             />
             <Button className="w-full" type="submit">
-              Sign In
+              Sign up
             </Button>
           </form>
         </Form>
@@ -78,12 +80,6 @@ const SignUp: React.FC<SignUpProps> = ({}) => {
             Sign In
           </Link>
         </div>
-      </div>
-      <div className="flex flex-row justify-between">
-        <p className="text-sm"> Already a User?</p>
-        <Link href={'/sign-in'} className="text-sm text-blue-500">
-          Sign In
-        </Link>
       </div>
     </Card>
   );

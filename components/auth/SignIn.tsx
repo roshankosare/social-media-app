@@ -16,15 +16,17 @@ import { useSignIn } from '@/hooks/useSignIn';
 interface SignInProps {}
 
 const SignIn: React.FC<SignInProps> = ({}) => {
-  const { form, onSubmit } = useSignIn();
+  const { form, onSubmit, signInError } = useSignIn();
   return (
-    <Card className="mx-auto my-auto flex w-96 flex-col border-none px-8 pb-10 sm:border-solid sm:px-2">
+    <Card className="full mx-auto my-auto flex flex-col border-none px-8 pb-10 sm:border-solid sm:px-2">
       <CardHeader>
         <Logo />
       </CardHeader>
       <div className="flex flex-col gap-y-8">
         <Form {...form}>
-          {/* {signInError && <ErrorBox className="my-2">{signInError}</ErrorBox>} */}
+          {signInError && (
+            <p className="mx-auto py-2 text-sm text-red-500">{signInError}</p>
+          )}
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="flex flex-col gap-y-8 px-5"
@@ -35,7 +37,7 @@ const SignIn: React.FC<SignInProps> = ({}) => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="email" {...field} />
+                    <Input type="text" placeholder="email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -61,8 +63,8 @@ const SignIn: React.FC<SignInProps> = ({}) => {
 
         <div className="flex flex-row justify-between px-5">
           <p className="text-sm"> Already a User?</p>
-          <Link href={'/sign-in'} className="text-sm text-blue-500">
-            Sign In
+          <Link href={'/sign-up'} className="text-sm text-blue-500">
+            Sign Up
           </Link>
         </div>
       </div>

@@ -8,12 +8,12 @@ import { useEffect } from 'react';
 export default function Home() {
   const session = useSession();
   const router = useRouter();
-  console.log(session);
+
   useEffect(() => {
     if (session.status === 'loading') return;
     if (session.status === 'authenticated') {
       setTimeout(() => {
-        router.push('/home');
+        router.push('/app');
       }, 2000);
 
       return;
