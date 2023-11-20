@@ -6,27 +6,27 @@ import {
   MessageSquare,
   Search,
   UserCircle2,
-} from 'lucide-react'
+} from 'lucide-react';
 
 export const UtilityIcons = {
   HomeIcon: (props: LucideProps) => {
-    return <Home {...props} />
+    return <Home {...props} />;
   },
   SerachIcon: (props: LucideProps) => {
-    return <Search {...props} />
+    return <Search {...props} />;
   },
   MessageIcon: (props: LucideProps) => {
-    return <MessageSquare {...props} />
+    return <MessageSquare {...props} />;
   },
   ExploreIcon: (props: LucideProps) => {
-    return <Compass {...props} />
+    return <Compass {...props} />;
   },
 
   NotificationIcon: (props: LucideProps) => {
-    return <Bell {...props} />
+    return <Bell {...props} />;
   },
 
   ProfileIcon: (props: LucideProps) => {
-    return <UserCircle2 {...props} />
+    return <UserCircle2 {...props} />;
   },
-}
+};

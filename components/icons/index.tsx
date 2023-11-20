@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
 export const NavBarIcon = {
   Logo: () => {
@@ -10,7 +10,7 @@ export const NavBarIcon = {
         alt="logo"
         className="h-full w-full rounded-full"
       />
-    )
+    );
   },
   NameIcon: () => {
     return (
@@ -21,6 +21,6 @@ export const NavBarIcon = {
         alt="logo"
         className="h-full w-full filter-none dark:invert"
       />
-    )
+    );
   },
-}
+};

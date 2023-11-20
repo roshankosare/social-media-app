@@ -1,5 +1,5 @@
-import { NavBarIcon } from '@/components/icons'
-import { ThemeToggle } from './ThemeToggle'
+import { NavBarIcon } from '@/components/icons';
+import { ThemeToggle } from './ThemeToggle';
 
 interface TopBarProps {}
 
@@ -19,6 +19,6 @@ const TopBar: React.FC<TopBarProps> = ({}) => {
         <ThemeToggle />
       </div>
     </div>
-  )
-}
-export default TopBar
+  );
+};
+export default TopBar;

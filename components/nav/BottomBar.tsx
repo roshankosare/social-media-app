@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { NavLinks } from './navLinks'
+import Link from 'next/link';
+import { NavLinks } from './navLinks';
 
 interface BottomBarProps {}
 
@@ -12,7 +12,7 @@ const BottomBar: React.FC<BottomBarProps> = ({}) => {
         </Link>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default BottomBar
+export default BottomBar;

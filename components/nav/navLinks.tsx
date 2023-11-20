@@ -1,11 +1,11 @@
-import { UtilityIcons } from '@/components/icons/utitlityIcons'
-import { LucideProps } from 'lucide-react'
+import { UtilityIcons } from '@/components/icons/utitlityIcons';
+import { LucideProps } from 'lucide-react';
 
 type NavLink = {
-  label: string
-  href: string
-  icon: React.FC<LucideProps>
-}
+  label: string;
+  href: string;
+  icon: React.FC<LucideProps>;
+};
 
 export const NavLinks: NavLink[] = [
   {
@@ -38,4 +38,4 @@ export const NavLinks: NavLink[] = [
     href: '/',
     icon: UtilityIcons.ProfileIcon,
   },
-]
+];

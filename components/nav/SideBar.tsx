@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import TopBar from './TopBar'
-import { NavLinks } from './navLinks'
+import Link from 'next/link';
+import TopBar from './TopBar';
+import { NavLinks } from './navLinks';
 
 interface SideBarProps {}
 
@@ -22,6 +22,6 @@ const SideBar: React.FC<SideBarProps> = ({}) => {
         ))}
       </div>
     </div>
-  )
-}
-export default SideBar
+  );
+};
+export default SideBar;
