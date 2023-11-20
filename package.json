@@ -6,11 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:staged": "next lint git diff --staged --name-only --diff -filter d | xargs",
-    "format:fix": "prettier --write --ignore-path .gitignore .",
-    "format:staged": "prettier --write git diff --staged --name-only --diff -filter d | xargs",
-    "postinstall": "husky install"
+    "lint": "next lint --fix",
+    "format": "prettier --write",
+    "postinstall": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,js,ts,jsx,tsx,html}": [
+      "prettier --write --ignore-unknown"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
