@@ -18,7 +18,7 @@ interface SignInProps {}
 const SignIn: React.FC<SignInProps> = ({}) => {
   const { form, onSubmit, signInError } = useSignIn();
   return (
-    <Card className="full mx-auto my-auto flex flex-col border-none px-8 pb-10 sm:border-solid sm:px-2">
+    <Card className=" mx-auto my-auto flex flex-col border-none px-8 pb-10 sm:border-solid sm:px-2">
       <CardHeader>
         <Logo />
       </CardHeader>
