@@ -1,6 +1,8 @@
 import Header from '@/components/nav/Header';
 import PostFeed from '@/components/post/PostFeed';
+import SuggestedUsers from '@/components/utitlity/SuggestedUsers';
 import { PostModel } from '@/types/models/Post';
+import { User } from '@/types/models/User';
 
 interface HomeProps {}
 
@@ -45,12 +47,44 @@ const posts: PostModel[] = [
     },
   },
 ];
+
+const users: User[] = [
+  {
+    username: 'roshan kosare',
+    email: 'email.com',
+    avatar: '/avatar.png',
+  },
+  {
+    username: 'john cena kosare',
+    email: 'email.com',
+    avatar: '/avatar.png',
+  },
+  {
+    username: 'roshan kosare',
+    email: 'email.com',
+    avatar: '/avatar.png',
+  },
+  {
+    username: 'roshan kosare',
+    email: 'email.com',
+    avatar: '/avatar.png',
+  },
+  {
+    username: 'roshan kosare',
+    email: 'email.com',
+    avatar: '/avatar.png',
+  },
+];
 const Home: React.FC<HomeProps> = ({}) => {
   return (
-    <div>
+    <div className="flex-row sm:flex">
       <Header />
-      <div className="h-screen">
+      <div className="h-screen w-full sm:w-[800px]">
         <PostFeed posts={posts} />
+      </div>
+      <div className="hidden h-screen w-full sm:block sm:w-[300px]">
+        {' '}
+        <SuggestedUsers users={users} />
       </div>
     </div>
   );

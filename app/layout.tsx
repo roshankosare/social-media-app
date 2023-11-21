@@ -26,7 +26,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Provider>
-            <div className="px-2 sm:px-2">{children}</div>
+            <div className="">{children}</div>
           </Provider>
         </ThemeProvider>
       </body>

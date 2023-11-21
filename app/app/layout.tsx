@@ -8,7 +8,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
       <div className="flex max-h-screen w-full">
         <SideBar />
         <BottomBar />
-        <div>{children}</div>
+        <div className="w-full">{children}</div>
       </div>
     </>
   );

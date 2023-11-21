@@ -4,8 +4,11 @@ import {
   Heart,
   Home,
   LucideProps,
+  MessageCircle,
   MessageSquare,
+  PlusSquare,
   Search,
+  Share2,
   UserCircle2,
 } from 'lucide-react';
 
@@ -33,5 +36,14 @@ export const UtilityIcons = {
 
   likeIcon: (props: LucideProps) => {
     return <Heart {...props} />;
+  },
+  CommentsIcon: (props: LucideProps) => {
+    return <MessageCircle {...props} />;
+  },
+  ShareIcon: (props: LucideProps) => {
+    return <Share2 {...props} />;
+  },
+  CreateIocn: (props: LucideProps) => {
+    return <PlusSquare {...props} />;
   },
 };

@@ -10,11 +10,13 @@ interface PostProps {
 
 const Post: React.FC<PostProps> = ({ post }) => {
   return (
-    <Card className="border-none">
-      <div className="flex flex-row gap-x-2 px-2 py-3 sm:px-5">
+    <Card className="mb-2 border-none">
+      <div className="flex flex-row gap-x-2  px-4 py-3 sm:px-0 ">
         <div className="flex flex-row gap-x-4">
           <Avatar url={post.user.avatar} />
-          <p className="my-auto">{post.user.username}</p>
+          <p className="sm:text-md my-auto text-sm font-bold">
+            {post.user.username}
+          </p>
         </div>
       </div>
       <div className="h-auto w-full">
@@ -23,12 +25,23 @@ const Post: React.FC<PostProps> = ({ post }) => {
           width={800}
           height={600}
           alt=""
-          className="h-full w-auto"
+          className="h-auto w-full"
         />
       </div>
 
-      <div className="flex gap-x-4 py-4 ">
-        <UtilityIcons.likeIcon size={28} />
+      <div className="flex gap-x-4 px-4 py-4 sm:px-0 ">
+        <UtilityIcons.likeIcon size={25} />
+        <UtilityIcons.CommentsIcon size={25} />
+        <UtilityIcons.ShareIcon size={25} />
+      </div>
+      <div className="flex flex-col gap-y-2">
+        {' '}
+        <p className="w-full px-5 text-sm font-bold">
+          {post.likeCount + ' ' + 'likes'}
+        </p>
+        <p className="py w-full px-5 text-sm text-gray-600 dark:text-gray-300">
+          {'view all ' + post.commentsCount + ' comments'}
+        </p>
       </div>
     </Card>
   );
