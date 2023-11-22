@@ -1,5 +1,7 @@
+import { authOptionts } from '@/lib/auth/nextAuth';
 import { PostActions } from '@/lib/posts';
 import { Prisma } from '@prisma/client';
+import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
 
 export const GET = async (req: Request) => {
@@ -17,11 +19,28 @@ export const GET = async (req: Request) => {
   return NextResponse.json(posts, { status: 200 });
 };
 
-// export const POST = async (req:Request) => {
-//     // const body = await req.formData();
-//     // const image = body.getAll("images");
-//     // const caption = body.get('caption');
+export const POST = async (req: Request) => {
+  const session = await getServerSession(authOptionts);
+  if (!session?.user)
+    return NextResponse.json({ message: 'forbidden' }, { status: 403 });
+  const body = await req.formData();
+  const image = body.get('image') as unknown as File;
+  const caption = body.get('caption') as unknown as string;
 
-//     //TODO:- upload images on file server;
+  if (!image)
+    return NextResponse.json(
+      { message: 'image not inlcuded' },
+      { status: 400 }
+    );
+  // TODO:- upload images on file server;
+  const imageUrl = '/samplePostImage.jpg';
 
-// }
+  const data = await PostActions.createPost(session.user.id, {
+    imageUrl: imageUrl,
+    caption: caption || '',
+  });
+
+  if (data) return NextResponse.json(data, { status: 200 });
+
+  return NextResponse.json({ message: 'invlaid user Id' }, { status: 403 });
+};

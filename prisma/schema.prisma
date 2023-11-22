@@ -37,6 +37,7 @@ model UserProfile {
   posts            Post[]        @relation("UserPosts")
   likedPosts       Post[]        @relation("likedPosts")
   commentedOnPosts Comment[]     @relation("UserCommentOnPost")
+  about            String?
 }
 
 model Post {

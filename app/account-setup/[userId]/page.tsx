@@ -10,11 +10,13 @@ import useAccountSetup from '@/hooks/useAccountSetup';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-interface AccountSetupProps {}
+interface AccountSetupProps {
+  params: { userId: string };
+}
 
-const AccountSetup: React.FC<AccountSetupProps> = ({}) => {
+const AccountSetup: React.FC<AccountSetupProps> = ({ params }) => {
   const { profileImage, about, setAbout, setProfileImage, handleNext } =
-    useAccountSetup();
+    useAccountSetup({ userId: params.userId });
   return (
     <Card className=" my-10 flex w-full flex-col gap-y-8 border-none px-8 py-5 shadow-none sm:border-solid sm:px-10 ">
       <Logo />

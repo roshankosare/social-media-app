@@ -2,7 +2,7 @@ import Header from '@/components/nav/Header';
 import PostFeed from '@/components/post/PostFeed';
 import SuggestedUsers from '@/components/utitlity/SuggestedUsers';
 import { PostModel } from '@/types/models/Post';
-import { User } from '@/types/models/User';
+import { User } from '@/types/models/UserModel';
 
 interface HomeProps {}
 

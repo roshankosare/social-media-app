@@ -1,4 +1,4 @@
-import { User } from '@/types/models/User';
+import { User } from '@/types/models/UserModel';
 import { Card } from '../ui/card';
 import Avatar from '../ui/avatar';
 

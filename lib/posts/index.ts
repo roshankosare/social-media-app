@@ -50,6 +50,7 @@ export class PostActions {
         commentsCount: data.comments.length,
         imageUrl: data.imageUrl,
         user: {
+          id: data.userProfile.id,
           username: data.userProfile.username,
           email: data.userProfile.email,
           avatar: data.userProfile.avatar,
@@ -58,5 +59,36 @@ export class PostActions {
       return post;
     });
     return posts;
+  }
+
+  static async createPost(
+    userId: string,
+    { imageUrl, caption }: { imageUrl: string; caption: string }
+  ): Promise<Partial<PostModel> | null> {
+    const user = await db.userProfile.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+    if (!user) return null;
+    const data = await db.post.create({
+      data: {
+        imageUrl: imageUrl,
+        caption: caption,
+        userProfile: {
+          connect: {
+            id: userId,
+          },
+        },
+      },
+    });
+    if (!data) return null;
+
+    const post: Partial<PostModel> = {
+      userId: data.userProfileId,
+      imageUrl: data.imageUrl,
+      id: data.id,
+    };
+    return post;
   }
 }
