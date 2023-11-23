@@ -2,7 +2,7 @@ import Header from '@/components/nav/Header';
 import PostFeed from '@/components/post/PostFeed';
 import SuggestedUsers from '@/components/utitlity/SuggestedUsers';
 import { PostModel } from '@/types/models/Post';
-import { User } from '@/types/models/UserModel';
+import { UserModel } from '@/types/models/UserModel';
 
 interface HomeProps {}
 
@@ -18,6 +18,7 @@ const posts: PostModel[] = [
       username: 'roshan kosare',
       email: 'test@test.com',
       avatar: '/avatar.png',
+      id: 'ksdnfksdn',
     },
   },
   {
@@ -31,6 +32,7 @@ const posts: PostModel[] = [
       username: 'roshan kosare',
       email: 'test@test.com',
       avatar: '/avatar.png',
+      id: 'jsnnfjbdskf',
     },
   },
   {
@@ -44,35 +46,41 @@ const posts: PostModel[] = [
       username: 'roshan kosare',
       email: 'test@test.com',
       avatar: '/avatar.png',
+      id: 'jknsdfjk',
     },
   },
 ];
 
-const users: User[] = [
+const users: UserModel[] = [
   {
     username: 'roshan kosare',
     email: 'email.com',
     avatar: '/avatar.png',
+    id: 'nsdjfnks',
   },
   {
     username: 'john cena kosare',
     email: 'email.com',
     avatar: '/avatar.png',
+    id: 'nsdjfnks',
   },
   {
     username: 'roshan kosare',
     email: 'email.com',
     avatar: '/avatar.png',
+    id: 'nsdjfnks',
   },
   {
     username: 'roshan kosare',
     email: 'email.com',
     avatar: '/avatar.png',
+    id: 'nsdjfnks',
   },
   {
     username: 'roshan kosare',
     email: 'email.com',
     avatar: '/avatar.png',
+    id: 'nsdjfnks',
   },
 ];
 const Home: React.FC<HomeProps> = ({}) => {

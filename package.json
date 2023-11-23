@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint --fix",
+    "lint": "next lint",
     "format": "prettier --write",
     "postinstall": "husky install",
     "lint-staged": "lint-staged"

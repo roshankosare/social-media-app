@@ -1,9 +1,9 @@
-import { User } from '@/types/models/UserModel';
+import { UserModel } from '@/types/models/UserModel';
 import { Card } from '../ui/card';
 import Avatar from '../ui/avatar';
 
 interface SuggestedUsersProps {
-  users: User[];
+  users: UserModel[];
 }
 
 const SuggestedUsers: React.FC<SuggestedUsersProps> = ({ users }) => {
