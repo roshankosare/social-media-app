@@ -62,7 +62,7 @@ const SignIn: React.FC<SignInProps> = ({}) => {
         </Form>
 
         <div className="flex flex-row justify-between px-5">
-          <p className="text-sm"> Already a User?</p>
+          <p className="text-sm"> New to NextWave?</p>
           <Link href={'/sign-up'} className="text-sm text-blue-500">
             Sign Up
           </Link>
