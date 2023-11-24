@@ -3,14 +3,15 @@ import Link from 'next/link';
 import TopBar from './TopBar';
 import { UtilityIcons } from '../icons/utitlityIcons';
 import Avatar from '../ui/avatar';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
+import { Button } from '../ui/button';
 
 interface SideBarProps {}
 
 const SideBar: React.FC<SideBarProps> = ({}) => {
   const session = useSession();
   return (
-    <div className="sticky left-0 hidden h-screen w-80 flex-col gap-y-10 border-r border-gray-300  py-5 dark:border-gray-500 sm:flex">
+    <div className="sticky left-0 hidden h-screen w-80 flex-col justify-between gap-y-10 border-r border-gray-300  py-5 dark:border-gray-500 sm:flex">
       <TopBar />
       <div className="flex flex-col gap-y-10 px-5">
         <Link href={'/app'} className="flex flex-row gap-x-5">
@@ -43,6 +44,18 @@ const SideBar: React.FC<SideBarProps> = ({}) => {
           </div>
           <div className="my-auto">Profile</div>
         </Link>
+      </div>
+      <div className="flex flex-col gap-y-5 px-5">
+        <Button
+          variant={'outline'}
+          className="flex w-28 flex-row gap-x-2 rounded-full  px-1 "
+          onClick={() => {
+            signOut();
+          }}
+        >
+          Sign out
+          <UtilityIcons.logOut size={16} />
+        </Button>
       </div>
     </div>
   );

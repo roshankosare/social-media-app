@@ -85,6 +85,7 @@ export class Auth {
 
       return userProfile;
     } catch (error) {
+      console.log(error);
       if (error instanceof Error) {
         if (error.message.includes('email')) throw new Error(error.message);
       }

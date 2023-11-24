@@ -7,6 +7,7 @@ import {
   MessageCircle,
   MessageSquare,
   PlusSquare,
+  Power,
   Search,
   Share2,
   UserCircle2,
@@ -28,6 +29,10 @@ export const UtilityIcons = {
 
   NotificationIcon: (props: LucideProps) => {
     return <Bell {...props} />;
+  },
+
+  logOut: (props: LucideProps) => {
+    return <Power {...props} />;
   },
 
   ProfileIcon: (props: LucideProps) => {

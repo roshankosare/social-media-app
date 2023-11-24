@@ -22,6 +22,10 @@ const useAccountSetup = ({ userId }: { userId: string }) => {
     });
   };
 
+  const handleSkip = () => {
+    router.push('/app');
+  };
+
   useEffect(() => {
     axios
       .get(`/api/user/${userId}`)
@@ -42,6 +46,7 @@ const useAccountSetup = ({ userId }: { userId: string }) => {
     profileImage,
     setAbout,
     handleNext,
+    handleSkip,
   };
 };
 export default useAccountSetup;
