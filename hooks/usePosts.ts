@@ -7,12 +7,11 @@ export const usePosts = () => {
   const [posts, setPosts] = useState<PostModel[]>([]);
   const [page, setPage] = useState<number>(1);
   const [loadingPosts, setLoadingPost] = useState<boolean>(true);
-
   useEffect(() => {
     axios
       .get('/api/post')
       .then((res) => {
-        setPosts((pre) => [...pre, ...res.data]);
+        setPosts(res.data);
         setLoadingPost(false);
         setPage((pre) => pre + 1);
       })
@@ -29,7 +28,7 @@ export const usePosts = () => {
         },
       })
       .then((res) => {
-        setPosts(res.data);
+        setPosts((pre) => [...pre, ...res.data]);
         setLoadingPost(false);
         setPage((pre) => pre + 1);
       });

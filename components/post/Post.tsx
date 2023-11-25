@@ -4,6 +4,7 @@ import Avatar from '../ui/avatar';
 import Image from 'next/image';
 import { UtilityIcons } from '../icons/utitlityIcons';
 import { Skeleton } from '../ui/skeleton';
+import Link from 'next/link';
 
 interface PostProps {
   post: PostModel;
@@ -13,12 +14,14 @@ const Post: React.FC<PostProps> = ({ post }) => {
   return (
     <Card className="mb-2 border-none">
       <div className="flex flex-row gap-x-2  px-4 py-3 sm:px-0 ">
-        <div className="flex flex-row gap-x-4">
-          <Avatar url={post.user.avatar} />
-          <p className="sm:text-md my-auto text-sm font-bold">
-            {post.user.username}
-          </p>
-        </div>
+        <Link href={`/app/profile/${post.user.id}`}>
+          <div className="flex flex-row gap-x-4">
+            <Avatar url={post.user.avatar} />
+            <p className="sm:text-md my-auto text-sm font-bold">
+              {post.user.username}
+            </p>
+          </div>
+        </Link>
       </div>
       <div className="h-auto w-full">
         <Image
@@ -40,9 +43,11 @@ const Post: React.FC<PostProps> = ({ post }) => {
         <p className="w-full px-5 text-sm font-bold">
           {post.likeCount + ' ' + 'likes'}
         </p>
-        <p className="py w-full px-5 text-sm text-gray-600 dark:text-gray-300">
-          {'view all ' + post.commentsCount + ' comments'}
-        </p>
+        {post.commentsCount > 10 ? (
+          <p className="py w-full px-5 text-sm text-gray-600 dark:text-gray-300">
+            {'view all ' + post.commentsCount + ' comments'}{' '}
+          </p>
+        ) : null}
       </div>
     </Card>
   );
@@ -58,7 +63,7 @@ export const PostSkeleton = () => {
         </div>
       </div>
       <div className="h-auto w-full">
-        <Skeleton className="h-72 w-full" />
+        <Skeleton className="h-[400px] w-full" />
       </div>
 
       <div className="flex gap-x-4 px-4 py-4 sm:px-0 ">

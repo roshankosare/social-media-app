@@ -17,7 +17,6 @@ const Home: React.FC<HomeProps> = ({}) => {
         <PostFeed />
       </div>
       <div className="hidden h-screen w-full sm:block sm:w-[300px]">
-        {' '}
         <SuggestedUsers users={users} />
       </div>
     </div>

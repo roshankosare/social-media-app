@@ -1,3 +1,4 @@
+import React from 'react';
 import { UserModel } from '@/types/models/UserModel';
 import { Card } from '../ui/card';
 import Avatar from '../ui/avatar';

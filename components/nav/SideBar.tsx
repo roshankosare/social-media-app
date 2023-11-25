@@ -1,14 +1,16 @@
 'use client';
+import React from 'react';
 import Link from 'next/link';
 import TopBar from './TopBar';
 import { UtilityIcons } from '../icons/utitlityIcons';
 import Avatar from '../ui/avatar';
 import { signOut, useSession } from 'next-auth/react';
 import { Button } from '../ui/button';
+import AlertDialogCustom from '../utitlity/AlertDialogCusotm';
 
 interface SideBarProps {}
 
-const SideBar: React.FC<SideBarProps> = ({}) => {
+const SideBar: React.FC<SideBarProps> = () => {
   const session = useSession();
   return (
     <div className="sticky left-0 hidden h-screen w-80 flex-col justify-between gap-y-10 border-r border-gray-300  py-5 dark:border-gray-500 sm:flex">
@@ -46,16 +48,19 @@ const SideBar: React.FC<SideBarProps> = ({}) => {
         </Link>
       </div>
       <div className="flex flex-col gap-y-5 px-5">
-        <Button
-          variant={'outline'}
-          className="flex w-28 flex-row gap-x-2 rounded-full  px-1 "
-          onClick={() => {
-            signOut();
-          }}
+        <AlertDialogCustom
+          title="Log Out"
+          description="Are you sure want to Log out"
+          nextAction={() => signOut()}
         >
-          Sign out
-          <UtilityIcons.logOut size={16} />
-        </Button>
+          <Button
+            variant={'outline'}
+            className="flex w-28 flex-row gap-x-2 rounded-full  px-1 "
+          >
+            Sign out
+            <UtilityIcons.logOut size={16} />
+          </Button>
+        </AlertDialogCustom>
       </div>
     </div>
   );
