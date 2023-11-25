@@ -20,27 +20,27 @@ const SideBar: React.FC<SideBarProps> = () => {
           {<UtilityIcons.HomeIcon />}
           <div className="my-auto">Home</div>
         </Link>
-        <Link href={'/app'} className="flex flex-row gap-x-5">
+        <Link href={'/app/search'} className="flex flex-row gap-x-5">
           {<UtilityIcons.SerachIcon />}
           <div className="my-auto">Search</div>
         </Link>
-        <Link href={'/app'} className="flex flex-row gap-x-5">
+        <Link href={'/app/messages'} className="flex flex-row gap-x-5">
           {<UtilityIcons.MessageIcon />}
           <div className="my-auto">Messages</div>
         </Link>
-        <Link href={'/app'} className="flex flex-row gap-x-5">
+        <Link href={'/app/explore'} className="flex flex-row gap-x-5">
           {<UtilityIcons.SerachIcon />}
           <div className="my-auto">Explore</div>
         </Link>
-        <Link href={'/app'} className="flex flex-row gap-x-5">
+        <Link href={'/app/notification'} className="flex flex-row gap-x-5">
           {<UtilityIcons.NotificationIcon />}
           <div className="my-auto">Notification</div>
         </Link>
-        <Link href={'/app'} className="flex flex-row gap-x-5">
+        <Link href={'/app/create-post'} className="flex flex-row gap-x-5">
           {<UtilityIcons.CreateIocn />}
           <div className="my-auto">Create</div>
         </Link>
-        <Link href={'/app'} className="flex flex-row gap-x-5">
+        <Link href={'/app/profile'} className="flex flex-row gap-x-5">
           <div className="h-[28px] w-[28px]">
             {<Avatar url={session.data?.user.image || '/avatar.png'} />}
           </div>

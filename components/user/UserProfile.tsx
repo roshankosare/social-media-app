@@ -74,24 +74,32 @@ const UserProfile: React.FC<UserProfileProps> = ({
 export const UserProfileSkeleton = () => {
   return (
     <div className="w-full ">
-      <div className="flex flex-row justify-start gap-x-5">
+      <div className="flex flex-row justify-start gap-x-2">
         <div className="h-[80px] w-[80px] px-2 py-2 sm:h-[180px] sm:w-[180px]">
           <Skeleton className="h-full w-full rounded-full" />
         </div>
         <div className="flex  w-[280px] flex-col gap-y-8 px-2 py-2 sm:w-[500px]">
-          <Skeleton className="h-8 w-28 rounded-sm" />
+          <Skeleton className="my-auto h-6 w-40 rounded-sm" />
           <div className=" hidden flex-row gap-x-4 sm:flex">
             <Skeleton className="h-6 w-28 rounded-sm" />
             <Skeleton className="h-6 w-28 rounded-sm" />
             <Skeleton className="h-6 w-28 rounded-sm" />
           </div>
 
-          <Skeleton className="hidden h-28 w-full rounded-sm sm:block" />
+          <div className=" hidden flex-col gap-y-4 sm:flex">
+            <Skeleton className=" h-4 w-[240px] rounded-sm " />
+            <Skeleton className=" h-4 w-[180px] rounded-sm " />
+            <Skeleton className=" h-4 w-[280px] rounded-sm " />
+          </div>
         </div>
       </div>
-      <Skeleton className="block h-28 w-full rounded-sm sm:hidden" />
-      <div className="flex justify-between  py-2 sm:hidden">
-        <Skeleton className="h-16 w-full" />
+      <div className=" flex flex-col gap-y-4 sm:hidden">
+        <Skeleton className=" h-4 w-[240px] rounded-sm " />
+        <Skeleton className=" h-4 w-[180px] rounded-sm " />
+        <Skeleton className=" h-4 w-[280px] rounded-sm " />
+      </div>
+      <div className="flex justify-between py-5 sm:hidden">
+        <Skeleton className="h-12 w-full" />
       </div>
     </div>
   );

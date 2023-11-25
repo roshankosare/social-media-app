@@ -9,10 +9,10 @@ const Avatar: React.FC<AvatarProps> = ({ url }) => {
   return (
     <Image
       src={url || '/avatar.jpg'}
-      width={80}
-      height={80}
+      width={200}
+      height={200}
       alt=""
-      className="h[40px] w-[40px] rounded-full border border-gray-300 dark:border-gray-500"
+      className=" h-full max-h-[50px] w-full max-w-[50px] rounded-full border border-gray-300 dark:border-gray-500"
     />
   );
 };
