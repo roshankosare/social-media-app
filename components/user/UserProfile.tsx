@@ -10,7 +10,10 @@ interface UserProfileProps {
   myProfile: boolean;
 }
 
-const UserProfile: React.FC<UserProfileProps> = ({ userProfil, myProfile }) => {
+const UserProfile: React.FC<UserProfileProps> = ({
+  userProfile,
+  myProfile,
+}) => {
   return (
     <div className="flex w-full flex-col ">
       <div className="flex flex-row justify-start gap-x-5 sm:gap-x-12">
