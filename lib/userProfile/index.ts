@@ -45,50 +45,57 @@ export class UserProfileAcitons {
     skip: number;
     whereInputArgs: Prisma.UserProfileWhereInput;
   }): Promise<UserModel[]> {
-    const data = await db.userProfile.findMany({
-      take: take,
-      skip: skip,
-      where: {
-        ...whereInputArgs,
-      },
-      select: {
-        username: true,
-        id: true,
-        avatar: true,
-        email: true,
-      },
-    });
+    try {
+      const data = await db.userProfile.findMany({
+        take: take,
+        skip: skip,
+        where: {
+          ...whereInputArgs,
+        },
+        select: {
+          username: true,
+          id: true,
+          avatar: true,
+          email: true,
+        },
+      });
+      const users: UserModel[] = data;
 
-    const users: UserModel[] = data;
-
-    return users;
+      return users;
+    } catch (error) {
+      throw new Error('internal server error');
+    }
   }
 
   static async updateUserProfile(
     userId: string,
     userProfileData: Partial<UserProfile>
   ): Promise<UserProfileModel | null> {
-    const user = await db.userProfile.findUnique({
-      where: {
-        id: userId,
-      },
-    });
+    try {
+      const user = await db.userProfile.findUnique({
+        where: {
+          id: userId,
+        },
+      });
 
-    if (!user) return null;
+      if (!user) return null;
 
-    const updatedUser = await db.userProfile.update({
-      where: {
-        id: user.id,
-      },
-      data: {
-        ...userProfileData,
-      },
-    });
+      const updatedUser = await db.userProfile.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          ...userProfileData,
+        },
+      });
 
-    if (!userProfileData) return null;
+      if (!userProfileData) return null;
 
-    const userData = await this.getUserProfile(updatedUser.id);
+      const userData = await this.getUserProfile(updatedUser.id);
 
-    return userData;
+      return userData;
+    } catch (error) {
+      throw new Error('internal server error');
+    }
   }
 }

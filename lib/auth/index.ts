@@ -122,11 +122,15 @@ export class Auth {
   }
 
   static async getUserProfile({ email }: { email: string }) {
-    const user = await db.userProfile.findUnique({
-      where: {
-        email: email,
-      },
-    });
-    return user;
+    try {
+      const user = await db.userProfile.findUnique({
+        where: {
+          email: email,
+        },
+      });
+      return user;
+    } catch (error) {
+      throw new Error('internal server error');
+    }
   }
 }

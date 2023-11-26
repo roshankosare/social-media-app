@@ -71,24 +71,28 @@ export const authOptionts: NextAuthOptions = {
     //   return true;
     // },
     jwt: async ({ token, user }) => {
-      if (!user) {
-        return token;
-      }
-      if (user.email) {
-        const userProfile = await Auth.getUserProfile({ email: user.email });
-
-        if (!userProfile) {
+      try {
+        if (!user) {
           return token;
         }
-        return {
-          ...token,
-          id: userProfile.id,
-          username: userProfile.username,
-          email: userProfile.email,
-          image: userProfile.avatar,
-        };
+        if (user.email) {
+          const userProfile = await Auth.getUserProfile({ email: user.email });
+
+          if (!userProfile) {
+            return token;
+          }
+          return {
+            ...token,
+            id: userProfile.id,
+            username: userProfile.username,
+            email: userProfile.email,
+            image: userProfile.avatar,
+          };
+        }
+        return token;
+      } catch (error) {
+        return token;
       }
-      return token;
     },
     session: ({ session, token }) => {
       return {

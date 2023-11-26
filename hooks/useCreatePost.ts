@@ -14,9 +14,14 @@ export const useCreatePost = () => {
 
     if (caption) form.set('caption', caption);
 
-    axios.post(`/api/post`, form).then((res) => {
-      router.push('/app');
-    });
+    axios
+      .post(`/api/post`, form)
+      .then((res) => {
+        router.push('/app');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return {

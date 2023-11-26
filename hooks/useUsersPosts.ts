@@ -32,6 +32,9 @@ export const useUsersPosts = (userId: string) => {
         setPosts((pre) => [...pre, res.data]);
         setLoading(false);
         setPage((pre) => pre + 1);
+      })
+      .catch((error) => {
+        setLoading(false);
       });
   };
 
