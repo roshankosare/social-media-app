@@ -5,15 +5,19 @@ import { NextResponse } from 'next/server';
 export const GET = async (req: Request) => {
   const { searchParams } = new URL(req.url);
   const username = searchParams.get('username');
-  const page = parseInt(searchParams.get('page') || '0');
+  const page = +(searchParams.get('page') || 1);
 
   const findUsers: Prisma.UserProfileWhereInput = {};
 
-  if (username) findUsers.username = username;
-
+  if (username)
+    findUsers.username = {
+      contains: username,
+    };
+  const take = 10;
+  const skip = page === 0 ? 0 : (page - 1) * take;
   const data = await UserProfileAcitons.getUserProfiles({
-    take: 10,
-    skip: +page,
+    take: take,
+    skip: skip,
     whereInputArgs: findUsers,
   });
 

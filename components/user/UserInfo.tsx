@@ -8,11 +8,11 @@ interface UserInfoProps {
 
 const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
   return (
-    <div className="flex w-full flex-row gap-x-5 px-2">
+    <div className="flex w-full flex-row gap-x-5 px-2 py-2">
       <div className="my-auto h-[50px] w-[50px]">
         <Avatar url={user.avatar} />
       </div>
-      <p className="my-auto text-xs font-bold">{user.username}</p>
+      <p className="my-auto text-sm font-bold">{user.username}</p>
     </div>
   );
 };

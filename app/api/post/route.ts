@@ -21,7 +21,7 @@ export const GET = async (req: Request) => {
   const findPostsArgs: Prisma.PostFindManyArgs = {};
   const take = 10;
   findPostsArgs.take = take;
-  findPostsArgs.skip = (page - 1) * take;
+  findPostsArgs.skip = page === 0 ? 0 : (page - 1) * take;
   findPostsArgs.where = {
     userProfileId: {
       not: user.id,
